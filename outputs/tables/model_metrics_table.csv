@@ -1,0 +1,7 @@
+Task,Model,R2,MAE,RMSE,Accuracy,Precision,Recall,F1
+Regression,LinearRegression,0.897,21.84,41.37,,,,
+Regression,DecisionTree,0.865,20.75,47.33,,,,
+Regression,RandomForest,0.925,16.33,35.37,,,,
+Classification,LogisticRegression,,,,0.797,0.794,0.797,0.794
+Classification,DecisionTree,,,,0.823,0.821,0.823,0.822
+Classification,RandomForest,,,,0.838,0.837,0.838,0.837

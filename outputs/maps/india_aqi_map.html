@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_07742db291e380d09258f087ccdd5200 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+background-color: white; padding: 10px; border: 2px solid grey; border-radius: 5px; font-size: 13px;">
+<b>AQI Category</b><br>
+<span style="color:green;">&#9679;</span> Good (0-50)<br>
+<span style="color:lightgreen;">&#9679;</span> Satisfactory (51-100)<br>
+<span style="color:orange;">&#9679;</span> Moderate (101-200)<br>
+<span style="color:red;">&#9679;</span> Poor (201-300)<br>
+<span style="color:darkred;">&#9679;</span> Very Poor (301-400)<br>
+<span style="color:purple;">&#9679;</span> Severe (400+)
+</div>
+    
+            <div class="folium-map" id="map_07742db291e380d09258f087ccdd5200" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_07742db291e380d09258f087ccdd5200 = L.map(
+                "map_07742db291e380d09258f087ccdd5200",
+                {
+                    center: [22.5, 80.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8bea3d786c1d1ceaeba2335a5ac46a07 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_8bea3d786c1d1ceaeba2335a5ac46a07.addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+            var circle_marker_74f54f2fadf0e1fe9d016a1303fed232 = L.circleMarker(
+                [23.0225, 72.5714],
+                {"bubblingMouseEvents": true, "color": "darkred", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "darkred", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.815219014435042, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_bf53d9220b88f1d1c50281e234c12629 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_aabaa57c5fded524df5a0d667ac74986 = $(`<div id="html_aabaa57c5fded524df5a0d667ac74986" style="width: 100.0%; height: 100.0%;"><b>Ahmedabad</b> (Gujarat)<br>Avg AQI: 392.6<br>Max AQI: 2049</div>`)[0];
+                popup_bf53d9220b88f1d1c50281e234c12629.setContent(html_aabaa57c5fded524df5a0d667ac74986);
+            
+        
+
+        circle_marker_74f54f2fadf0e1fe9d016a1303fed232.bindPopup(popup_bf53d9220b88f1d1c50281e234c12629)
+        ;
+
+        
+    
+    
+            circle_marker_74f54f2fadf0e1fe9d016a1303fed232.bindTooltip(
+                `<div>
+                     Ahmedabad
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3aef65fc81b5c45d48496a25f275a962 = L.circleMarker(
+                [23.7271, 92.7176],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.869469026548672, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_6872d23e2d0f422550c8b4429ab570ad = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_5b2836f30d5a528393c701878da34129 = $(`<div id="html_5b2836f30d5a528393c701878da34129" style="width: 100.0%; height: 100.0%;"><b>Aizawl</b> (Mizoram)<br>Avg AQI: 34.8<br>Max AQI: 92</div>`)[0];
+                popup_6872d23e2d0f422550c8b4429ab570ad.setContent(html_5b2836f30d5a528393c701878da34129);
+            
+        
+
+        circle_marker_3aef65fc81b5c45d48496a25f275a962.bindPopup(popup_6872d23e2d0f422550c8b4429ab570ad)
+        ;
+
+        
+    
+    
+            circle_marker_3aef65fc81b5c45d48496a25f275a962.bindTooltip(
+                `<div>
+                     Aizawl
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ea38c25eb0a7ec49077c84a02fa231fa = L.circleMarker(
+                [16.5417, 80.515],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.305993690851736, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_b3c3cca4157f39c12aeedf2d40dd7313 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_c54d83d13c0ecf1efd01463d230247c6 = $(`<div id="html_c54d83d13c0ecf1efd01463d230247c6" style="width: 100.0%; height: 100.0%;"><b>Amaravati</b> (Andhra Pradesh)<br>Avg AQI: 92.2<br>Max AQI: 312</div>`)[0];
+                popup_b3c3cca4157f39c12aeedf2d40dd7313.setContent(html_c54d83d13c0ecf1efd01463d230247c6);
+            
+        
+
+        circle_marker_ea38c25eb0a7ec49077c84a02fa231fa.bindPopup(popup_b3c3cca4157f39c12aeedf2d40dd7313)
+        ;
+
+        
+    
+    
+            circle_marker_ea38c25eb0a7ec49077c84a02fa231fa.bindTooltip(
+                `<div>
+                     Amaravati
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_467e12aead911c736da4f329d0cf0848 = L.circleMarker(
+                [31.634, 74.8723],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.97874692874693, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_9af0c0a96019ccf3d1392701af51c9b4 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_406ed353c3fda0029b7e6371493963c2 = $(`<div id="html_406ed353c3fda0029b7e6371493963c2" style="width: 100.0%; height: 100.0%;"><b>Amritsar</b> (Punjab)<br>Avg AQI: 119.1<br>Max AQI: 869</div>`)[0];
+                popup_9af0c0a96019ccf3d1392701af51c9b4.setContent(html_406ed353c3fda0029b7e6371493963c2);
+            
+        
+
+        circle_marker_467e12aead911c736da4f329d0cf0848.bindPopup(popup_9af0c0a96019ccf3d1392701af51c9b4)
+        ;
+
+        
+    
+    
+            circle_marker_467e12aead911c736da4f329d0cf0848.bindTooltip(
+                `<div>
+                     Amritsar
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7d4824b1e8f1781bb790e906fc12ad27 = L.circleMarker(
+                [12.9716, 77.5946],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.407491289198607, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_51d3500895f7fd52e169b573bf84ea4a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_9cf04455f8efbe4871693d5bdc81054e = $(`<div id="html_9cf04455f8efbe4871693d5bdc81054e" style="width: 100.0%; height: 100.0%;"><b>Bengaluru</b> (Karnataka)<br>Avg AQI: 96.3<br>Max AQI: 376</div>`)[0];
+                popup_51d3500895f7fd52e169b573bf84ea4a.setContent(html_9cf04455f8efbe4871693d5bdc81054e);
+            
+        
+
+        circle_marker_7d4824b1e8f1781bb790e906fc12ad27.bindPopup(popup_51d3500895f7fd52e169b573bf84ea4a)
+        ;
+
+        
+    
+    
+            circle_marker_7d4824b1e8f1781bb790e906fc12ad27.bindTooltip(
+                `<div>
+                     Bengaluru
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_19f83b731548cbf4bd284a30b8c178e5 = L.circleMarker(
+                [23.2599, 77.4126],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.294290657439447, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_cda944381d8797f3ab5c07cb862a21d3 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_13bed5baa32d1257dc7815c3a924dfb5 = $(`<div id="html_13bed5baa32d1257dc7815c3a924dfb5" style="width: 100.0%; height: 100.0%;"><b>Bhopal</b> (Madhya Pradesh)<br>Avg AQI: 131.8<br>Max AQI: 312</div>`)[0];
+                popup_cda944381d8797f3ab5c07cb862a21d3.setContent(html_13bed5baa32d1257dc7815c3a924dfb5);
+            
+        
+
+        circle_marker_19f83b731548cbf4bd284a30b8c178e5.bindPopup(popup_cda944381d8797f3ab5c07cb862a21d3)
+        ;
+
+        
+    
+    
+            circle_marker_19f83b731548cbf4bd284a30b8c178e5.bindTooltip(
+                `<div>
+                     Bhopal
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8bfeb4d3cae7901b315888d90af53c01 = L.circleMarker(
+                [21.8167, 83.9167],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.7409381663113, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_996185bfe6035da0ebef5ae35ed580ca = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_72a42c40a0962ed685a78d64907d7f2f = $(`<div id="html_72a42c40a0962ed685a78d64907d7f2f" style="width: 100.0%; height: 100.0%;"><b>Brajrajnagar</b> (Odisha)<br>Avg AQI: 149.6<br>Max AQI: 494</div>`)[0];
+                popup_996185bfe6035da0ebef5ae35ed580ca.setContent(html_72a42c40a0962ed685a78d64907d7f2f);
+            
+        
+
+        circle_marker_8bfeb4d3cae7901b315888d90af53c01.bindPopup(popup_996185bfe6035da0ebef5ae35ed580ca)
+        ;
+
+        
+    
+    
+            circle_marker_8bfeb4d3cae7901b315888d90af53c01.bindTooltip(
+                `<div>
+                     Brajrajnagar
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ebf6a91c1dde4fe933ee83e8bafb3e6c = L.circleMarker(
+                [30.7333, 76.7794],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.40452302631579, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_03af60a697a49d636d34215032b365ca = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_c4c57c5c7c51bdebd1653b49be9914fa = $(`<div id="html_c4c57c5c7c51bdebd1653b49be9914fa" style="width: 100.0%; height: 100.0%;"><b>Chandigarh</b> (Chandigarh)<br>Avg AQI: 96.2<br>Max AQI: 335</div>`)[0];
+                popup_03af60a697a49d636d34215032b365ca.setContent(html_c4c57c5c7c51bdebd1653b49be9914fa);
+            
+        
+
+        circle_marker_ebf6a91c1dde4fe933ee83e8bafb3e6c.bindPopup(popup_03af60a697a49d636d34215032b365ca)
+        ;
+
+        
+    
+    
+            circle_marker_ebf6a91c1dde4fe933ee83e8bafb3e6c.bindTooltip(
+                `<div>
+                     Chandigarh
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6c10dd15a5e4172b64db9a3791075199 = L.circleMarker(
+                [13.0827, 80.2707],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.851007964161274, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_19ebaae249953601604953673c626332 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_8c84d6af9961f2c0aaf30a4d3cb96576 = $(`<div id="html_8c84d6af9961f2c0aaf30a4d3cb96576" style="width: 100.0%; height: 100.0%;"><b>Chennai</b> (Tamil Nadu)<br>Avg AQI: 114.0<br>Max AQI: 449</div>`)[0];
+                popup_19ebaae249953601604953673c626332.setContent(html_8c84d6af9961f2c0aaf30a4d3cb96576);
+            
+        
+
+        circle_marker_6c10dd15a5e4172b64db9a3791075199.bindPopup(popup_19ebaae249953601604953673c626332)
+        ;
+
+        
+    
+    
+            circle_marker_6c10dd15a5e4172b64db9a3791075199.bindTooltip(
+                `<div>
+                     Chennai
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_aed66007e32a2f934fb7cf10a6e13669 = L.circleMarker(
+                [11.0168, 76.9558],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.824417098445596, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_5084ff27fdfb4b3b9f01180a432e1398 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_edff124dd651fc20705635ada38b1875 = $(`<div id="html_edff124dd651fc20705635ada38b1875" style="width: 100.0%; height: 100.0%;"><b>Coimbatore</b> (Tamil Nadu)<br>Avg AQI: 73.0<br>Max AQI: 120</div>`)[0];
+                popup_5084ff27fdfb4b3b9f01180a432e1398.setContent(html_edff124dd651fc20705635ada38b1875);
+            
+        
+
+        circle_marker_aed66007e32a2f934fb7cf10a6e13669.bindPopup(popup_5084ff27fdfb4b3b9f01180a432e1398)
+        ;
+
+        
+    
+    
+            circle_marker_aed66007e32a2f934fb7cf10a6e13669.bindTooltip(
+                `<div>
+                     Coimbatore
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_99d92e2009d1aa04b083e585e6c1cfe0 = L.circleMarker(
+                [28.7041, 77.1025],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.467931806869089, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_87eade90f7ad0e010170ac56052d64e6 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a4cdf6bc8a3c01103bf564ea0b342fec = $(`<div id="html_a4cdf6bc8a3c01103bf564ea0b342fec" style="width: 100.0%; height: 100.0%;"><b>Delhi</b> (Delhi)<br>Avg AQI: 258.7<br>Max AQI: 716</div>`)[0];
+                popup_87eade90f7ad0e010170ac56052d64e6.setContent(html_a4cdf6bc8a3c01103bf564ea0b342fec);
+            
+        
+
+        circle_marker_99d92e2009d1aa04b083e585e6c1cfe0.bindPopup(popup_87eade90f7ad0e010170ac56052d64e6)
+        ;
+
+        
+    
+    
+            circle_marker_99d92e2009d1aa04b083e585e6c1cfe0.bindTooltip(
+                `<div>
+                     Delhi
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5a4cbea4c51967f5b2ba922a832d9228 = L.circleMarker(
+                [9.9816, 76.2999],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.302469135802468, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_c3c5d77f04d96ae6b1eef4cb2df23bb8 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_6a99f1f7eff07899ebbb07e0d39ec174 = $(`<div id="html_6a99f1f7eff07899ebbb07e0d39ec174" style="width: 100.0%; height: 100.0%;"><b>Ernakulam</b> (Kerala)<br>Avg AQI: 92.1<br>Max AQI: 180</div>`)[0];
+                popup_c3c5d77f04d96ae6b1eef4cb2df23bb8.setContent(html_6a99f1f7eff07899ebbb07e0d39ec174);
+            
+        
+
+        circle_marker_5a4cbea4c51967f5b2ba922a832d9228.bindPopup(popup_c3c5d77f04d96ae6b1eef4cb2df23bb8)
+        ;
+
+        
+    
+    
+            circle_marker_5a4cbea4c51967f5b2ba922a832d9228.bindTooltip(
+                `<div>
+                     Ernakulam
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_64a771a9195365fcee1e9738b72613e9 = L.circleMarker(
+                [28.4595, 77.0266],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.664889815366289, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_6bf5828f58c02087a606f6f77dd86e41 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_342be0582e8f6616af4dfd67b9662b3e = $(`<div id="html_342be0582e8f6616af4dfd67b9662b3e" style="width: 100.0%; height: 100.0%;"><b>Gurugram</b> (Haryana)<br>Avg AQI: 226.6<br>Max AQI: 891</div>`)[0];
+                popup_6bf5828f58c02087a606f6f77dd86e41.setContent(html_342be0582e8f6616af4dfd67b9662b3e);
+            
+        
+
+        circle_marker_64a771a9195365fcee1e9738b72613e9.bindPopup(popup_6bf5828f58c02087a606f6f77dd86e41)
+        ;
+
+        
+    
+    
+            circle_marker_64a771a9195365fcee1e9738b72613e9.bindTooltip(
+                `<div>
+                     Gurugram
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0d18476a8a8bd0fe3eabe2ade9996fa6 = L.circleMarker(
+                [26.1445, 91.7362],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.56160358565737, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_5cf9422d7415813886186038056f568e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_5f8c9a566016863eced25d400ebb3b2a = $(`<div id="html_5f8c9a566016863eced25d400ebb3b2a" style="width: 100.0%; height: 100.0%;"><b>Guwahati</b> (Assam)<br>Avg AQI: 142.5<br>Max AQI: 956</div>`)[0];
+                popup_5cf9422d7415813886186038056f568e.setContent(html_5f8c9a566016863eced25d400ebb3b2a);
+            
+        
+
+        circle_marker_0d18476a8a8bd0fe3eabe2ade9996fa6.bindPopup(popup_5cf9422d7415813886186038056f568e)
+        ;
+
+        
+    
+    
+            circle_marker_0d18476a8a8bd0fe3eabe2ade9996fa6.bindTooltip(
+                `<div>
+                     Guwahati
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ca439c79452a8fb1d5dde31b05104be1 = L.circleMarker(
+                [17.385, 78.4867],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.712475074775673, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_87c8d6864acd2226c77085a70d6baba9 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_986dab8d8f68c0c58e00f088f8ab959c = $(`<div id="html_986dab8d8f68c0c58e00f088f8ab959c" style="width: 100.0%; height: 100.0%;"><b>Hyderabad</b> (Telangana)<br>Avg AQI: 108.5<br>Max AQI: 737</div>`)[0];
+                popup_87c8d6864acd2226c77085a70d6baba9.setContent(html_986dab8d8f68c0c58e00f088f8ab959c);
+            
+        
+
+        circle_marker_ca439c79452a8fb1d5dde31b05104be1.bindPopup(popup_87c8d6864acd2226c77085a70d6baba9)
+        ;
+
+        
+    
+    
+            circle_marker_ca439c79452a8fb1d5dde31b05104be1.bindTooltip(
+                `<div>
+                     Hyderabad
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_22585ba70265b4ba87da1542954b97d5 = L.circleMarker(
+                [26.9124, 75.7873],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.322239676840216, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_0fc1ae23bcd4d92bbf0a28ee3afaef4a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_60572e95acc6ec34cad44e495674f30e = $(`<div id="html_60572e95acc6ec34cad44e495674f30e" style="width: 100.0%; height: 100.0%;"><b>Jaipur</b> (Rajasthan)<br>Avg AQI: 132.9<br>Max AQI: 457</div>`)[0];
+                popup_0fc1ae23bcd4d92bbf0a28ee3afaef4a.setContent(html_60572e95acc6ec34cad44e495674f30e);
+            
+        
+
+        circle_marker_22585ba70265b4ba87da1542954b97d5.bindPopup(popup_0fc1ae23bcd4d92bbf0a28ee3afaef4a)
+        ;
+
+        
+    
+    
+            circle_marker_22585ba70265b4ba87da1542954b97d5.bindTooltip(
+                `<div>
+                     Jaipur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_16bb517a3e8c7a1825a2e6ec95219dcf = L.circleMarker(
+                [23.7, 86.4167],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.634409751924721, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_d37c8c99c3b90486bffc2af1524d6a78 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_d3fdc301eca2b00111576b8a6c833cfc = $(`<div id="html_d3fdc301eca2b00111576b8a6c833cfc" style="width: 100.0%; height: 100.0%;"><b>Jorapokhar</b> (Jharkhand)<br>Avg AQI: 145.4<br>Max AQI: 604</div>`)[0];
+                popup_d37c8c99c3b90486bffc2af1524d6a78.setContent(html_d3fdc301eca2b00111576b8a6c833cfc);
+            
+        
+
+        circle_marker_16bb517a3e8c7a1825a2e6ec95219dcf.bindPopup(popup_d37c8c99c3b90486bffc2af1524d6a78)
+        ;
+
+        
+    
+    
+            circle_marker_16bb517a3e8c7a1825a2e6ec95219dcf.bindTooltip(
+                `<div>
+                     Jorapokhar
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_43a7ab85d88604a3e7c90e6dda97c027 = L.circleMarker(
+                [9.9312, 76.2673],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.612962962962964, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_81983262d5e1017a576ad50672e39128 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_c293d652b7a676499b7a6249fd1402f6 = $(`<div id="html_c293d652b7a676499b7a6249fd1402f6" style="width: 100.0%; height: 100.0%;"><b>Kochi</b> (Kerala)<br>Avg AQI: 104.5<br>Max AQI: 277</div>`)[0];
+                popup_81983262d5e1017a576ad50672e39128.setContent(html_c293d652b7a676499b7a6249fd1402f6);
+            
+        
+
+        circle_marker_43a7ab85d88604a3e7c90e6dda97c027.bindPopup(popup_81983262d5e1017a576ad50672e39128)
+        ;
+
+        
+    
+    
+            circle_marker_43a7ab85d88604a3e7c90e6dda97c027.bindTooltip(
+                `<div>
+                     Kochi
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_88dfb46ea075cae374ed4c262bf93352 = L.circleMarker(
+                [22.5726, 88.3639],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.358169533169534, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_4248d94dc4f673e439d8e496d2151608 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_3cbba352e6d194aedcf1a2a9d17a3814 = $(`<div id="html_3cbba352e6d194aedcf1a2a9d17a3814" style="width: 100.0%; height: 100.0%;"><b>Kolkata</b> (West Bengal)<br>Avg AQI: 134.3<br>Max AQI: 475</div>`)[0];
+                popup_4248d94dc4f673e439d8e496d2151608.setContent(html_3cbba352e6d194aedcf1a2a9d17a3814);
+            
+        
+
+        circle_marker_88dfb46ea075cae374ed4c262bf93352.bindPopup(popup_4248d94dc4f673e439d8e496d2151608)
+        ;
+
+        
+    
+    
+            circle_marker_88dfb46ea075cae374ed4c262bf93352.bindTooltip(
+                `<div>
+                     Kolkata
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_227f5d5e5864b517d189e86eb0509fc0 = L.circleMarker(
+                [26.8467, 80.9462],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.492670482827277, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_26626dd6ca79f02cc3946aaf79fab72e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_140ca47988f7f2d796d4d8faacddf304 = $(`<div id="html_140ca47988f7f2d796d4d8faacddf304" style="width: 100.0%; height: 100.0%;"><b>Lucknow</b> (Uttar Pradesh)<br>Avg AQI: 219.7<br>Max AQI: 707</div>`)[0];
+                popup_26626dd6ca79f02cc3946aaf79fab72e.setContent(html_140ca47988f7f2d796d4d8faacddf304);
+            
+        
+
+        circle_marker_227f5d5e5864b517d189e86eb0509fc0.bindPopup(popup_26626dd6ca79f02cc3946aaf79fab72e)
+        ;
+
+        
+    
+    
+            circle_marker_227f5d5e5864b517d189e86eb0509fc0.bindTooltip(
+                `<div>
+                     Lucknow
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e658dc878d7b9ffb787de78a4991cbfb = L.circleMarker(
+                [19.076, 72.8777],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.417894474863116, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_518fd05dfac8e810c253e4efb3b95527 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_81c82466b816371402b43ef2d6c94cb3 = $(`<div id="html_81c82466b816371402b43ef2d6c94cb3" style="width: 100.0%; height: 100.0%;"><b>Mumbai</b> (Maharashtra)<br>Avg AQI: 96.7<br>Max AQI: 307</div>`)[0];
+                popup_518fd05dfac8e810c253e4efb3b95527.setContent(html_81c82466b816371402b43ef2d6c94cb3);
+            
+        
+
+        circle_marker_e658dc878d7b9ffb787de78a4991cbfb.bindPopup(popup_518fd05dfac8e810c253e4efb3b95527)
+        ;
+
+        
+    
+    
+            circle_marker_e658dc878d7b9ffb787de78a4991cbfb.bindTooltip(
+                `<div>
+                     Mumbai
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_52c95f4b68c3d65024a3a5daf5bd9200 = L.circleMarker(
+                [25.5941, 85.1376],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.414720129171151, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_0a3dcd086d69320b3508e423d677512d = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e683ee0b363308179beed94da1cb1245 = $(`<div id="html_e683ee0b363308179beed94da1cb1245" style="width: 100.0%; height: 100.0%;"><b>Patna</b> (Bihar)<br>Avg AQI: 216.6<br>Max AQI: 619</div>`)[0];
+                popup_0a3dcd086d69320b3508e423d677512d.setContent(html_e683ee0b363308179beed94da1cb1245);
+            
+        
+
+        circle_marker_52c95f4b68c3d65024a3a5daf5bd9200.bindPopup(popup_0a3dcd086d69320b3508e423d677512d)
+        ;
+
+        
+    
+    
+            circle_marker_52c95f4b68c3d65024a3a5daf5bd9200.bindTooltip(
+                `<div>
+                     Patna
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c2fc8c3ed2c6dadd6cb5d6d3db285cc5 = L.circleMarker(
+                [25.5788, 91.8933],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.365967741935484, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_e5e1edb864c12fac02828b208e796388 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7602d526e8b5886834ed82e00e5ccce4 = $(`<div id="html_7602d526e8b5886834ed82e00e5ccce4" style="width: 100.0%; height: 100.0%;"><b>Shillong</b> (Meghalaya)<br>Avg AQI: 54.6<br>Max AQI: 726</div>`)[0];
+                popup_e5e1edb864c12fac02828b208e796388.setContent(html_7602d526e8b5886834ed82e00e5ccce4);
+            
+        
+
+        circle_marker_c2fc8c3ed2c6dadd6cb5d6d3db285cc5.bindPopup(popup_e5e1edb864c12fac02828b208e796388)
+        ;
+
+        
+    
+    
+            circle_marker_c2fc8c3ed2c6dadd6cb5d6d3db285cc5.bindTooltip(
+                `<div>
+                     Shillong
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c7024c3033c56dc942243b8758279441 = L.circleMarker(
+                [20.95, 85.2167],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.241829004329004, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_e174b8bf715ac39ebc6d5bb2bd98d10e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_15a7885b9586085bbc50534cb1452ab2 = $(`<div id="html_15a7885b9586085bbc50534cb1452ab2" style="width: 100.0%; height: 100.0%;"><b>Talcher</b> (Odisha)<br>Avg AQI: 169.7<br>Max AQI: 570</div>`)[0];
+                popup_e174b8bf715ac39ebc6d5bb2bd98d10e.setContent(html_15a7885b9586085bbc50534cb1452ab2);
+            
+        
+
+        circle_marker_c7024c3033c56dc942243b8758279441.bindPopup(popup_e174b8bf715ac39ebc6d5bb2bd98d10e)
+        ;
+
+        
+    
+    
+            circle_marker_c7024c3033c56dc942243b8758279441.bindTooltip(
+                `<div>
+                     Talcher
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8ad7a2d44b9e306878050cbf5f552bd7 = L.circleMarker(
+                [8.5241, 76.9366],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "lightgreen", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.847976618705036, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_3e8b70dd39d6573b73bab19cb8d419ef = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7bf782cf4b7e651e9e81f5b7839b91a8 = $(`<div id="html_7bf782cf4b7e651e9e81f5b7839b91a8" style="width: 100.0%; height: 100.0%;"><b>Thiruvananthapuram</b> (Kerala)<br>Avg AQI: 73.9<br>Max AQI: 230</div>`)[0];
+                popup_3e8b70dd39d6573b73bab19cb8d419ef.setContent(html_7bf782cf4b7e651e9e81f5b7839b91a8);
+            
+        
+
+        circle_marker_8ad7a2d44b9e306878050cbf5f552bd7.bindPopup(popup_3e8b70dd39d6573b73bab19cb8d419ef)
+        ;
+
+        
+    
+    
+            circle_marker_8ad7a2d44b9e306878050cbf5f552bd7.bindTooltip(
+                `<div>
+                     Thiruvananthapuram
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e603b478b48aa34e4a047a520a9bb6e4 = L.circleMarker(
+                [17.6868, 83.2185],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.799589603283174, "stroke": true, "weight": 3}
+            ).addTo(map_07742db291e380d09258f087ccdd5200);
+        
+    
+        var popup_127cb7b4c5e096fa79671aba57012290 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_2c07b36d22c430e64f61a14f1f14deb2 = $(`<div id="html_2c07b36d22c430e64f61a14f1f14deb2" style="width: 100.0%; height: 100.0%;"><b>Visakhapatnam</b> (Andhra Pradesh)<br>Avg AQI: 112.0<br>Max AQI: 387</div>`)[0];
+                popup_127cb7b4c5e096fa79671aba57012290.setContent(html_2c07b36d22c430e64f61a14f1f14deb2);
+            
+        
+
+        circle_marker_e603b478b48aa34e4a047a520a9bb6e4.bindPopup(popup_127cb7b4c5e096fa79671aba57012290)
+        ;
+
+        
+    
+    
+            circle_marker_e603b478b48aa34e4a047a520a9bb6e4.bindTooltip(
+                `<div>
+                     Visakhapatnam
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
