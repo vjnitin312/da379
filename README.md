@@ -40,6 +40,10 @@ da379/
 │   └── tables/                     # Predictions, forecasts, model metrics (CSV)
 ├── report/
 │   └── da379_report_nitin_vijay_23035010571/  # IEEE-format LaTeX report + PDF
+├── ppt/
+│   └── da379_ppt_nitin_vijay_23035010571/  # Project in 9 slide view
+├── video/
+│   └── da379_video_nitin_vijay_23035010571/  # 10 minute project demonstration
 ├── requirements.txt
 └── README.md
 ```
